@@ -16,7 +16,7 @@ export default function Navbar() {
             <a href="/">Givit</a>
         </div>
         <div className="navigation-bar-links-dx">
-            <a href="/blog">Blog</a>
+            {/*<a href="/blog">Blog</a>}*/}
             <a href="/about-us">About Us</a>
             <a href="/business">Business</a>
             <a href="/contact-us">Contact Us</a>
