@@ -282,7 +282,6 @@ textarea {
 
 .homepage-content-explanation-images div:nth-child(1), .homepage-content-sustainability-images-row div:nth-child(1) {
   width: 60%;
-
 }
 
 .homepage-content-explanation-images div:nth-child(2), .homepage-content-sustainability-images-row div:nth-child(2) {
@@ -349,6 +348,68 @@ textarea {
 homepage-content-sustainability-images-row img {
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .homepage-content-stack p {
+    width: 100%;
+    font-size: 60px;
+    text-align: center;
+    right: auto;
+  }
+
+  .homepage-content-stack img {
+    margin-top: 30%;
+  }
+
+  .homepage-content-explanation, .homepage-content-sustainability {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+
+  .homepage-content-sustainability p:nth-child(1) {
+    margin-bottom: 10%;
+  }
+
+  .homepage-content-explanation p {
+    margin-top: 10%;
+  }
+
+  .homepage-content-explanation-button, .homepage-content-sustainability-button {
+    margin-top: 5%;
+    margin-bottom: 20%;
+  }
+
+  .homepage-content-explanation-images {
+    margin-bottom: 20%;
+  }
+
+  .homepage-content-sustainability-images-row:last-child {
+    margin-bottom: 30%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homepage-content-stack p {
+    font-size: 50px;
+  }
+
+  .homepage-content-stack p span {
+    display: block;
+  }
+
+  .homepage-content-stack img {
+    margin-top: 50%;
+  }
+
+  .homepage-content-sustainability p:nth-child(1) {
+    font-size: 40px;
+  }
+
+  .homepage-content-sustainability p:nth-child(1) span {
+    font-size: 40px;
+  }
+}
+
 
 /* Logo Bottom */
 
@@ -447,21 +508,14 @@ homepage-content-sustainability-images-row img {
 
 .about-us-content-team {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   margin-top: 10%;
-  margin-bottom: 10%;
-}
-
-.about-us-content-team-row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  margin-bottom: 30%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 50px;
+  justify-items: center;
   align-items: center;
-  margin-bottom: 5%;
 }
 
 .about-us-content-team-row-member {
@@ -513,6 +567,36 @@ homepage-content-sustainability-images-row img {
 .about-us-content-team-row-member-description a img {
   width: 20px;
   height: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .about-us-content-wrapper {
+    width: 70%;
+  }
+  .about-us-content-team {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-us-content-titles {
+    margin-bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .about-us-content-titles p:nth-child(3) {
+    width: 80%;
+    margin-top: 15%;
+  }
+
+  .about-us-content-team {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, auto);
+    margin-bottom: 60%;
+  }
 }
 
 /* Contact Us */
