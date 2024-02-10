@@ -282,7 +282,6 @@ textarea {
 
 .homepage-content-explanation-images div:nth-child(1), .homepage-content-sustainability-images-row div:nth-child(1) {
   width: 60%;
-
 }
 
 .homepage-content-explanation-images div:nth-child(2), .homepage-content-sustainability-images-row div:nth-child(2) {
@@ -349,6 +348,68 @@ textarea {
 homepage-content-sustainability-images-row img {
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .homepage-content-stack p {
+    width: 100%;
+    font-size: 60px;
+    text-align: center;
+    right: auto;
+  }
+
+  .homepage-content-stack img {
+    margin-top: 30%;
+  }
+
+  .homepage-content-explanation, .homepage-content-sustainability {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+
+  .homepage-content-sustainability p:nth-child(1) {
+    margin-bottom: 10%;
+  }
+
+  .homepage-content-explanation p {
+    margin-top: 10%;
+  }
+
+  .homepage-content-explanation-button, .homepage-content-sustainability-button {
+    margin-top: 5%;
+    margin-bottom: 20%;
+  }
+
+  .homepage-content-explanation-images {
+    margin-bottom: 20%;
+  }
+
+  .homepage-content-sustainability-images-row:last-child {
+    margin-bottom: 30%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .homepage-content-stack p {
+    font-size: 50px;
+  }
+
+  .homepage-content-stack p span {
+    display: block;
+  }
+
+  .homepage-content-stack img {
+    margin-top: 50%;
+  }
+
+  .homepage-content-sustainability p:nth-child(1) {
+    font-size: 40px;
+  }
+
+  .homepage-content-sustainability p:nth-child(1) span {
+    font-size: 40px;
+  }
+}
+
 
 /* Logo Bottom */
 
