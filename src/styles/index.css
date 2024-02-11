@@ -100,6 +100,51 @@ textarea {
   font-size: 15px;
 }
 
+.navigation-bar-close, .navigation-bar-toggle {
+  display: none;
+}
+
+.navigation-bar-menu, .navigation-bar-menu-show {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: -85%;
+  top: 0;
+  width: 85%;
+  height: 100%;
+  background-color: white;
+  padding: 6rem 3rem 0;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  visibility: hidden;
+  transition: left 0.5s, visibility 0.5s;
+  row-gap: 6%;
+}
+
+.navigation-bar-menu a, .navigation-bar-menu-show a {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1024px) {
+  .navigation-bar-links-sx, .navigation-bar-links-dx {
+    visibility: hidden;
+  }
+
+  .navigation-bar-toggle, .navigation-bar-close {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 2.5%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  .navigation-bar-menu-show {
+    left: 0;
+    visibility: visible;
+  }
+}
+
 /* Footer */
 
 .footer {
@@ -216,6 +261,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .homepage-content-stack {
