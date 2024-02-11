@@ -220,7 +220,7 @@ textarea {
   font-size: 10px;
   font-weight: 400;
   color: white;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .footer-links {
@@ -251,6 +251,33 @@ textarea {
   border-radius: 10px;
   background-color: white;
   margin-right: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer-input {
+    width: 80%;
+  }
+
+  .footer-privacy {
+    width: 80%;
+    margin-bottom: 20%;
+  }
+
+  .footer-links {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    width: calc(30% - 5px);
+    margin-bottom: 14px;
+  }
 }
 
 /* Homepage */
