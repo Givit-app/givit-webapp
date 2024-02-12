@@ -854,14 +854,18 @@ homepage-content-sustainability-images-row img {
 }
 
 .business-content-row-image {
-  width: 50%;
+  min-width: 50%;
   border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .business-content-row-image img {
   width: 100%;
   height: 100%;
   border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .business-content-row-text {
@@ -1095,5 +1099,57 @@ homepage-content-sustainability-images-row img {
     grid-template-rows: repeat(6, auto);
     margin-bottom: 60%;
   }
+}
+
+/* Contact Us Media Queries */
+
+@media screen and (max-width: 1600px) {
+
+  .contact-us-content-wrapper {
+    width: 45%;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  .contact-us-content-wrapper {
+    width: 55%;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .contact-us-content-wrapper {
+    width: 65%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .contact-us-content-form-inputs {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-us-content-form-inputs input{
+    width: 93%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-us-content-titles p:nth-child(1) {
+    font-size: 40px;
+  }
+
+  .contact-us-content-titles p:nth-child(2) {
+    font-size: 15px;
+    margin-bottom: 10%;
+  }
+
 }
 
