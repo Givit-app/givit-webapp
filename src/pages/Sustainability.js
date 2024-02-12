@@ -24,13 +24,13 @@ export default function Sustainability() {
                 />
                 <SustainabilityWidget title={"We promote a more dynamic and efficient economy"}
                                       content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt venenatis leo, quis lobortis nulla tincidunt vel. Nulla ut mauris urna. Mauris at sapien rhoncus, ornare urna id rutrum neque. Donec dictum dolor tellus, vel bibendum orci aliquet non. Morbi gravida tincidunt est. Donec ac odio quis libero tincidunt dignissim in eget dolor. Donec posuere suscipit ex pretium laoreet. Etiam molestie varius lorem. Mauris quis est euismod, euismod neque in tristique velit."}
-                                      reverse={true}
+                                      reverse={false}
                                       alignment={true}
                 />
                 <SustainabilityWidget title={"We love diversity"}
                                       content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt venenatis leo, quis lobortis nulla tincidunt vel. Nulla ut mauris urna. Mauris at sapien rhoncus, ornare urna id rutrum neque. Donec dictum dolor tellus, vel bibendum orci aliquet non. Morbi gravida tincidunt est. Donec ac odio quis libero tincidunt dignissim in eget dolor. Donec posuere suscipit ex pretium laoreet. Etiam molestie varius lorem. Mauris quis est euismod, euismod neque in tristique velit."}
                                       reverse={true}
-                                      alignment={false}
+                                      alignment={true}
                 />
             </div>
         </div>
