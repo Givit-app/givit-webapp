@@ -26,7 +26,7 @@ export default function Footer() {
                 <div className="footer-links">
                     <a href="/application">App</a>
                     <a href="/sustainability">Sustainability</a>
-                    <a href="/blog">Blog</a>
+                    {/*<a href="/blog">Blog</a>*/}
                     <a href="/about-us">About Us</a>
                     <a href="/business">Business</a>
                     <a href="/contact-us">Contact Us</a>
