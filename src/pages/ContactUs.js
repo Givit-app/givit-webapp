@@ -16,7 +16,7 @@ export default function ContactUs() {
     const notify = (toastSelection) => {
         switch(toastSelection){
             case 0:{
-                toast.success('😁 Richiesta inviata!\nTi invieremo una risposta appena possibile!', {
+                toast.success('Richiesta inviata!\nTi invieremo una risposta appena possibile!', {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -29,7 +29,7 @@ export default function ContactUs() {
                 break;
             }
             case 1:{
-                toast.error('😢 Errore durante la richiesta!\nRiprova più tardi!', {
+                toast.error('Errore durante la richiesta!\nRiprova più tardi!', {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -42,7 +42,20 @@ export default function ContactUs() {
                 break;
             }
             case 2:{
-                toast.warn('😏 Ci sono degli errori nei campi inseriti!\nVerifica e riprova!', {
+                toast.warn('Ci sono degli errori nei campi inseriti!\nVerifica e riprova!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                break;
+            }
+            case 3:{
+                toast.info('Hai appena inviato una richiesta!\nRiprova più tardi!', {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -76,6 +89,9 @@ export default function ContactUs() {
                 .then(function (response) {
                     if(response){
                         notify(0);
+                        document.getElementsByName("name")[0].value = "";
+                        document.getElementsByName("email")[0].value = "";
+                        document.getElementsByName("message")[0].value = "";
                     }else{
                         notify(1);
                     }
@@ -83,6 +99,8 @@ export default function ContactUs() {
                 .catch(function (error) {
                     notify(1);
                 });
+            }else{
+                notify(3);
             }
         }else{
             notify(2);
