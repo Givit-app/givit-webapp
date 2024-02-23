@@ -82,7 +82,7 @@ export default function ContactUs() {
     const sendRequest = async () => {
         if(await checkParametersValidity()){
             if(!requestSent){
-                setRequestSent(true);
+                //setRequestSent(true);
                 await axios.post(`${process.env.REACT_APP_SERVER_URL}/contact/send-request`, {
                     name: document.getElementsByName("name")[0].value,
                     email: document.getElementsByName("email")[0].value,
