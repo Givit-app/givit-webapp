@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from "react-ga4";
 
 import Navbar from '../components/Navbar.js';
 import Footer from "../components/Footer";
@@ -9,6 +10,7 @@ import '../styles/index.css';
 import LogoBottom from "../components/LogoBottom";
 
 export default function Homepage() {
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Home Page" });
     return (
         <>
         <Navbar />

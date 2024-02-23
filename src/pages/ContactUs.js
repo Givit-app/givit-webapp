@@ -8,10 +8,12 @@ import Footer from "../components/Footer";
 
 import '../styles/index.css';
 import 'react-toastify/dist/ReactToastify.css';
+import ReactGA from "react-ga4";
 
 export default function ContactUs() {
 
     const [requestSent, setRequestSent] = useState(false);
+    ReactGA.send({ hitType: "pageview", page: "/contact-us", title: "Contact Us Page" });
 
     const notify = (toastSelection) => {
         switch(toastSelection){

@@ -5,8 +5,10 @@ import Footer from "../components/Footer";
 import Member from "../components/AboutUs/Member";
 
 import '../styles/index.css';
+import ReactGA from "react-ga4";
 
 export default function AboutUs() {
+    ReactGA.send({ hitType: "pageview", page: "/about-us", title: "About Us Page" });
     return (
         <>
             <Navbar />

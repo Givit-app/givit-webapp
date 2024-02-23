@@ -5,8 +5,10 @@ import Footer from "../components/Footer";
 import BusinessWidget from "../components/Business/BusinessWidget";
 
 import '../styles/index.css';
+import ReactGA from "react-ga4";
 
 export default function Business() {
+    ReactGA.send({ hitType: "pageview", page: "/business", title: "Business Page" });
     return (
         <>
             <Navbar/>

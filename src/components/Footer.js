@@ -5,8 +5,17 @@ import '../styles/index.css';
 import linkedin from '../assets/linkedin.png';
 import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
+import ReactGA from "react-ga4";
 
 export default function Footer() {
+
+    const catchAnalyticsSocialMedia = (socialName) => {
+        ReactGA.event({
+            category: `${socialName} profile`,
+            action: "Click",
+        });
+    }
+
     return (
         <div className="footer">
             <div className="footer-wrapper">
@@ -33,11 +42,11 @@ export default function Footer() {
                 </div>
                 <div className="footer-socials">
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a target={"_blank"} href="https://www.linkedin.com/company/givitapp/" rel="noreferrer"><img src={linkedin} alt="Linkedin logo"/></a>
+                    <a target={"_blank"} href="https://www.linkedin.com/company/givitapp/" rel="noreferrer"><img onClick={catchAnalyticsSocialMedia("Linkedin")} src={linkedin} alt="Linkedin logo"/></a>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a target={"_blank"} href="https://www.instagram.com/givit.app?igsh=OGQ5ZDc2ODk2ZA==" rel="noreferrer"><img src={instagram} alt="Instagram logo"/></a>
+                    <a target={"_blank"} href="https://www.instagram.com/givit.app?igsh=OGQ5ZDc2ODk2ZA==" rel="noreferrer"><img onClick={catchAnalyticsSocialMedia("Instagram")} src={instagram} alt="Instagram logo"/></a>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a target={"_blank"} href="https://www.facebook.com" rel="noreferrer"><img src={facebook} alt="Facebook logo"/></a>
+                    <a target={"_blank"} href="https://www.facebook.com" rel="noreferrer"><img onClick={catchAnalyticsSocialMedia("Facebook")} src={facebook} alt="Facebook logo"/></a>
                 </div>
             </div>
         </div>
