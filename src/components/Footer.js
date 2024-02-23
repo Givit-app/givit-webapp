@@ -30,7 +30,7 @@ export default function Footer() {
                 notify("error", "Si è verificato un errore. Riprova più tardi!");
             });
         }else{
-            notify("warning", "Inserisci una mail valida!");
+            notify("warning", "Inserisci una email valida!");
         }
     }
 
