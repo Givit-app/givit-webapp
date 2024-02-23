@@ -1,10 +1,10 @@
 import React from 'react';
+import ReactGA from "react-ga4";
+
+import '../styles/index.css';
 
 import Navbar from '../components/Navbar.js';
 import Footer from "../components/Footer";
-
-import '../styles/index.css';
-import ReactGA from "react-ga4";
 
 export default function Application() {
     ReactGA.send({ hitType: "pageview", page: "/application", title: "App Page" });

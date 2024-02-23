@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactGA from "react-ga4";
 
+import '../styles/index.css';
+
 import Navbar from '../components/Navbar.js';
 import Footer from "../components/Footer";
+import LogoBottom from "../components/LogoBottom";
 
 import homepageImage from '../assets/homepage_image.png';
-
-import '../styles/index.css';
-import LogoBottom from "../components/LogoBottom";
 
 export default function Homepage() {
     ReactGA.send({ hitType: "pageview", page: "/", title: "Home Page" });

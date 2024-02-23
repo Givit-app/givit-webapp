@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 import validator from 'validator';
-
-import Navbar from '../components/Navbar.js';
-import Footer from "../components/Footer";
+import ReactGA from "react-ga4";
 
 import '../styles/index.css';
 import 'react-toastify/dist/ReactToastify.css';
-import ReactGA from "react-ga4";
+
+import Navbar from '../components/Navbar.js';
+import Footer from "../components/Footer";
 
 export default function ContactUs() {
 

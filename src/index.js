@@ -6,7 +6,7 @@ import App from './App';
 
 import './styles/index.css';
 
-ReactGA.initialize("G-Z18CE6G209");
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

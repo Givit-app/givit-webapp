@@ -1,11 +1,11 @@
 import React from 'react';
-
-import Navbar from '../components/Navbar.js';
+import ReactGA from "react-ga4";
 
 import '../styles/index.css';
+
+import Navbar from '../components/Navbar.js';
 import Footer from "../components/Footer";
 import SustainabilityWidget from "../components/Sustainability/SustainabilityWidget";
-import ReactGA from "react-ga4";
 
 export default function Sustainability() {
     ReactGA.send({hitType: "pageview", page: "/sustainability", title: "Sustainability Page"});

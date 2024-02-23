@@ -1,9 +1,9 @@
 import React from 'react';
 
+import '../styles/index.css';
+
 import Navbar from '../components/Navbar.js';
 import Footer from "../components/Footer";
-
-import '../styles/index.css';
 
 export default function NotFound() {
   return (
