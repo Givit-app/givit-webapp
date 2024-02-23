@@ -1,79 +1,21 @@
 import React, {useState} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import axios from "axios";
 import validator from 'validator';
 import ReactGA from "react-ga4";
+import notify from "../utils/local_notification.js";
 
 import '../styles/index.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from '../components/Navbar.js';
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.js";
 
 export default function ContactUs() {
 
-    const [requestSent, setRequestSent] = useState(false);
     ReactGA.send({ hitType: "pageview", page: "/contact-us", title: "Contact Us Page" });
 
-    const notify = (toastSelection) => {
-        switch(toastSelection){
-            case 0:{
-                toast.success('Richiesta inviata!\nTi invieremo una risposta appena possibile!', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                break;
-            }
-            case 1:{
-                toast.error('Errore durante la richiesta!\nRiprova più tardi!', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                break;
-            }
-            case 2:{
-                toast.warn('Ci sono degli errori nei campi inseriti!\nVerifica e riprova!', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                break;
-            }
-            case 3:{
-                toast.info('Hai appena inviato una richiesta!\nRiprova più tardi!', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                break;
-            }
-            default:{
-                break;
-            }
-        }
-    }
+    const [requestSent, setRequestSent] = useState(false);
 
     const checkParametersValidity = async () => {
         return (validator.isEmail(document.getElementsByName("email")[0].value) && document.getElementsByName("name")[0].value !== "" && document.getElementsByName("message")[0].value !== "");
@@ -82,7 +24,7 @@ export default function ContactUs() {
     const sendRequest = async () => {
         if(await checkParametersValidity()){
             if(!requestSent){
-                //setRequestSent(true);
+                setRequestSent(true);
                 await axios.post(`${process.env.REACT_APP_SERVER_URL}/contact/send-request`, {
                     name: document.getElementsByName("name")[0].value,
                     email: document.getElementsByName("email")[0].value,
@@ -90,22 +32,22 @@ export default function ContactUs() {
                 })
                 .then(function (response) {
                     if(response){
-                        notify(0);
+                        notify("success", "Richiesta inviata con successo!");
                         document.getElementsByName("name")[0].value = "";
                         document.getElementsByName("email")[0].value = "";
                         document.getElementsByName("message")[0].value = "";
                     }else{
-                        notify(1);
+                        notify("error", "Si è verificato un errore. Riprova più tardi!");
                     }
                 })
                 .catch(function (error) {
-                    notify(1);
+                    notify("error", "Si è verificato un errore. Riprova più tardi!");
                 });
             }else{
-                notify(3);
+                notify("information", "Hai appena inviato una richiesta. Riprova più tardi!");
             }
         }else{
-            notify(2);
+            notify("warning", "C'è un errore con i campi inseriti. Verifica e riprova!");
         }
     }
 
