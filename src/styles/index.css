@@ -941,6 +941,7 @@ homepage-content-sustainability-images-row img {
 
 .sustainability-widget-container {
   width: 50%;
+  height: 500px;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -988,7 +989,7 @@ homepage-content-sustainability-images-row img {
 }
 
 .sustainability-widget-bigger-section, .sustainability-widget-smaller-section {
-  padding: 30px;
+  padding: 50px;
 }
 
 /* Temporary */
