@@ -1058,6 +1058,17 @@ homepage-content-sustainability-images-row img {
   }
 
   .sustainability-widget-bigger-section p:nth-of-type(1){
+    font-size: 40px;
+  }
+
+  .sustainability-widget-bigger-section p:nth-of-type(2){
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 650px){
+  .sustainability-widget-bigger-section p:nth-of-type(1){
     font-size: 30px;
     line-height: 36px;
   }
@@ -1066,7 +1077,18 @@ homepage-content-sustainability-images-row img {
     font-size: 15px;
     line-height: 18px;
   }
+}
 
+@media screen and (max-width: 450px){
+  .sustainability-widget-bigger-section p:nth-of-type(1){
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  .sustainability-widget-bigger-section p:nth-of-type(2){
+    font-size: 13px;
+    line-height: 18px;
+  }
 }
 
 /* Homepage Media Queries */
