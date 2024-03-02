@@ -13,7 +13,7 @@ export default function Homepage() {
     ReactGA.send({ hitType: "pageview", page: "/", title: "Home Page" });
     return (
         <>
-        <Navbar />
+            <Navbar />
             <div className="homepage-content">
                 <div className="homepage-content-stack">
                     {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
