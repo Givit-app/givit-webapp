@@ -4,40 +4,45 @@ import '../../styles/index.css';
 
 export default function SustainabilityWidget(props) {
 
-    const image = require('../../assets/sustainability-goal-'+props.index+'.png');
+    const goalImage = require("../../assets/sustainability-goal-"+props.index+".png");
+    const backgroundImage = require(`../../assets/sustainability-background-${props.index}.png`);
 
-    const externalContainerStyle = {
-        background: `linear-gradient(to right, ${props.firstColor}, ${props.secondColor})`,
-        flexDirection: (props.alignment) ? 'row-reverse': 'row',
+    const containerStyle = {
+        background: ` 
+            linear-gradient(
+              rgba(0, 0, 0, 0.3), 
+              rgba(0, 0, 0, 0.3)
+            ),
+            url(${backgroundImage})
+        `,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
     };
 
-    const internalBiggerContainerStyle = {
-        textAlign: (props.alignment) ? 'right' : 'left',
-        flexDirection: (props.reverse) ? 'column-reverse' : 'column',
+    const containerContentStyle = {
+        justifyContent: (props.alignment) ? "right": "left",
+        alignItems: (props.alignment) ? "flex-end" : "flex-start",
+        textAlign: (props.alignment) ? "right" : "left",
+        marginBottom: (props.alignment) ? "0" : "150px",
+        marginTop: (props.alignment) ? "150px" : "0",
+        flexDirection: (props.reverse) ? "column-reverse" : "column",
     };
 
-    const internalSmallerContainerImageStyle = {
-        marginLeft: (props.reverse && props.alignment) ? '0' : (!props.reverse && !props.alignment) ? 'auto' : 'auto',
-        marginTop: (props.reverse && props.alignment) ? '0' : (!props.reverse && !props.alignment) ? 'auto' : '0',
+    const firstPContainerStyle = {
+        marginTop: (props.reverse) ? "0" : "auto",
     };
 
-    const internalBiggerContainerFirstParagraphStyle = {
-        marginBottom: (!props.reverse) ? '3%' : '0',
-    };
-
-    const internalBiggerContainerSecondParagraphStyle = {
-        marginBottom: (props.reverse) ? '3%' : '0',
+    const imageContainerStyle = {
+        marginBottom: (props.reverse) ? "30px" : "auto",
     };
 
     return (
-        <div className={"sustainability-widget-container"} style={externalContainerStyle}>
-            <div className={"sustainability-widget-bigger-section"} style={internalBiggerContainerStyle}>
-                <p style={internalBiggerContainerFirstParagraphStyle}>{props.title}</p>
-                <p style={internalBiggerContainerSecondParagraphStyle}>{props.content}</p>
-            </div>
-            <div className={"sustainability-widget-smaller-section"}>
-                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-                <img style={internalSmallerContainerImageStyle} src={image} alt="Sustainability goal image"/>
+        <div style={containerStyle} className={"sustainability-widget-container"}>
+            <div style={containerContentStyle} className="sustanability-widget-container-content">
+                <p style={firstPContainerStyle}>{props.title}</p>
+                <p>{props.content}</p>
+                <img style={imageContainerStyle} src={goalImage} alt="Sustainability goal"/>
             </div>
         </div>
     );

@@ -16,7 +16,6 @@ export default function Footer() {
     const subscribeToNewsletter = async () => {
         try {
             const emailInput = document.getElementsByName("email")[0].value;
-
             if (validator.isEmail(emailInput)) {
                 const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/newsletter/subscribe`, {
                     email: emailInput,
@@ -67,7 +66,7 @@ export default function Footer() {
                         <a href="/sustainability">Sustainability</a>
                         {/*<a href="/blog">Blog</a>*/}
                         <a href="/about-us">About Us</a>
-                        <a href="/business">Business</a>
+                        {/*<a href="/business">Business</a>*/}
                         <a href="/contact-us">Contact Us</a>
                     </div>
                     <div className="footer-socials">
