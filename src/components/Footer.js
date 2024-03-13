@@ -1,24 +1,23 @@
 import React from 'react';
 import validator from 'validator';
 import sendEventAnalytics from '../services/analytics.js';
+import {ToastContainer} from "react-toastify";
+import notify from "../utils/local_notification";
+import axios from "axios";
 
 import '../styles/index.css';
 
 import linkedin from '../assets/linkedin.png';
 import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
-import {ToastContainer} from "react-toastify";
-import notify from "../utils/local_notification";
-import axios from "axios";
 
 export default function Footer() {
 
     const subscribeToNewsletter = async () => {
         try {
-            const emailInput = document.getElementsByName("email")[0].value;
-            if (validator.isEmail(emailInput)) {
+            if (validator.isEmail(document.getElementById("emailInput").value)) {
                 const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/newsletter/subscribe`, {
-                    email: emailInput,
+                    email: document.getElementById("emailInput").value,
                 }, {
                     validateStatus: function (status) {
                         return status === 200 || status === 409 || status === 500;
@@ -53,7 +52,7 @@ export default function Footer() {
                         <p>Subscribe to our newsletter.</p>
                     </div>
                     <div className="footer-input">
-                        <input type="text" name="email" placeholder="Email" />
+                        <input id={"emailInput"} type="text" name="email" placeholder="Email" />
                         <div className="footer-input-submit-button" onClick={subscribeToNewsletter}>
                             <i className="material-icons">east</i>
                         </div>

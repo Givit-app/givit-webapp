@@ -18,7 +18,7 @@ export default function ContactUs() {
     const [requestSent, setRequestSent] = useState(false);
 
     const checkParametersValidity = async () => {
-        return (validator.isEmail(document.getElementsByName("email")[0].value) && document.getElementsByName("name")[0].value !== "" && document.getElementsByName("message")[0].value !== "");
+         return (validator.isEmail(document.getElementsByName("email")[0].value) && document.getElementsByName("name")[0].value !== "" && document.getElementsByName("message")[0].value !== "");
     }
 
     const sendRequest = async () => {
