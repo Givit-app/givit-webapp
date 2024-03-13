@@ -3,22 +3,48 @@ import React from 'react';
 import '../../styles/index.css';
 
 export default function SustainabilityWidget(props) {
-    let divStyleProperties = [];
-    let pStyleProperties = [{},{}];
-    if(!props.reverse && !props.alignment) {
-        divStyleProperties = [{paddingTop: "30px", paddingBottom: "100px", paddingLeft: "30px", paddingRight: "30px"}];
-        pStyleProperties = [{marginRight: "20%", marginBottom: "3%"}, {marginRight: "30%", marginTop: "0"}];
-    }else if(!props.reverse && props.alignment) {
-        divStyleProperties = [{paddingTop: "30px", paddingBottom: "100px", paddingLeft: "30px", paddingRight: "30px", textAlign: "right"}];
-        pStyleProperties = [{marginLeft: "20%", marginBottom: "3%"}, {marginLeft: "30%", marginTop: "0"}];
-    }else if(props.reverse && props.alignment) {
-        divStyleProperties = [{flexDirection: "column-reverse", paddingTop: "100px", paddingBottom: "30px", paddingLeft: "30px", paddingRight: "30px", textAlign: "left"}];
-        pStyleProperties = [{marginRight: "20%", marginTop: "0"}, {marginRight: "30%", marginBottom: "3%"}];
-    }
+
+    const goalImage = require("../../assets/sustainability-goal-"+props.index+".png");
+    const backgroundImage = require(`../../assets/sustainability-background-${props.index}.png`);
+
+    const containerStyle = {
+        background: ` 
+            linear-gradient(
+              rgba(0, 0, 0, 0.3), 
+              rgba(0, 0, 0, 0.3)
+            ),
+            url(${backgroundImage})
+        `,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+    };
+
+    const containerContentStyle = {
+        justifyContent: (props.alignment) ? "right": "left",
+        alignItems: (props.alignment) ? "flex-end" : "flex-start",
+        textAlign: (props.alignment) ? "right" : "left",
+        marginBottom: (props.alignment) ? "0" : "150px",
+        marginTop: (props.alignment) ? "150px" : "0",
+        flexDirection: (props.reverse) ? "column-reverse" : "column",
+    };
+
+    const firstPContainerStyle = {
+        marginTop: (props.reverse) ? "0" : "auto",
+    };
+
+    const imageContainerStyle = {
+        marginBottom: (props.reverse) ? "30px" : "auto",
+    };
+
     return (
-        <div style={Object.assign({}, ...divStyleProperties)} className="sustainability-content-widget">
-            <p style={pStyleProperties[0]}>{props.title}</p>
-            <p style={pStyleProperties[1]}>{props.content}</p>
+        <div style={containerStyle} className={"sustainability-widget-container"}>
+            <div style={containerContentStyle} className="sustanability-widget-container-content">
+                <p style={firstPContainerStyle}>{props.title}</p>
+                <p>{props.content}</p>
+                <img style={imageContainerStyle} src={goalImage} alt="Sustainability goal"/>
+            </div>
         </div>
     );
+
 }

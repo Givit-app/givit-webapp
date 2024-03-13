@@ -62,8 +62,12 @@ export default function ContactUs() {
                     </div>
                     <div className="contact-us-content-form">
                         <div className="contact-us-content-form-inputs">
-                            <input type="text" name={"name"} placeholder={"Name"}/>
-                            <input type="email" name={"email"} placeholder={"Email"}/>
+                            <div className="contact-us-inputs-overlay">
+                                <input type="text" name={"name"} placeholder={"Name"}/>
+                            </div>
+                            <div className="contact-us-inputs-overlay">
+                                <input type="email" name={"email"} placeholder={"Email"}/>
+                            </div>
                         </div>
                         <div className="contact-us-content-form-textarea">
                             <textarea name="message" rows="10" placeholder={"Write here what you need!"}/>

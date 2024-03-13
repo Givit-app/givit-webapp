@@ -14,25 +14,34 @@ import axios from "axios";
 export default function Footer() {
 
     const subscribeToNewsletter = async () => {
-        if(validator.isEmail(document.getElementsByName("email")[0].value)){
-            await axios.post(`${process.env.REACT_APP_SERVER_URL}/newsletter/subscribe`, {
-                email: document.getElementsByName("email")[0].value,
-            })
-            .then(function (response) {
-                if(response){
+        try {
+            const emailInput = document.getElementsByName("email")[0].value;
+            if (validator.isEmail(emailInput)) {
+                const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/newsletter/subscribe`, {
+                    email: emailInput,
+                }, {
+                    validateStatus: function (status) {
+                        return status === 200 || status === 409 || status === 500;
+                    },
+                });
+
+                if (response.status === 200) {
                     notify("success", "Controlla la email che ti abbiamo inviato per verificare la tua iscrizione!");
                     document.getElementsByName("email")[0].value = "";
-                }else{
-                    notify("error", "Si è verificato un errore. Riprova più tardi!");
+                } else if (response.status === 409) {
+                    notify("information", "La mail inserita è già presente nei nostri sistemi!");
+                    document.getElementsByName("email")[0].value = "";
+                } else {
+                    notify("error", "Errore durante la richiesta al server");
                 }
-            })
-            .catch(function (error) {
-                notify("error", "Si è verificato un errore. Riprova più tardi!");
-            });
-        }else{
-            notify("warning", "Inserisci una email valida!");
+            } else {
+                notify("warning", "Inserisci una email valida!");
+            }
+        } catch (error) {
+            console.error(error);
+            notify("error", "Si è verificato un errore. Riprova più tardi!");
         }
-    }
+    };
 
     return (
         <>
@@ -57,7 +66,7 @@ export default function Footer() {
                         <a href="/sustainability">Sustainability</a>
                         {/*<a href="/blog">Blog</a>*/}
                         <a href="/about-us">About Us</a>
-                        <a href="/business">Business</a>
+                        {/*<a href="/business">Business</a>*/}
                         <a href="/contact-us">Contact Us</a>
                     </div>
                     <div className="footer-socials">
