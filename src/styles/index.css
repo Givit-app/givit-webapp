@@ -117,11 +117,15 @@ textarea {
     z-index: 10;
     visibility: hidden;
     transition: left 0.5s, visibility 0.5s;
-    row-gap: 6%;
+    row-gap: 3%;
 }
 
 .navigation-bar-menu a, .navigation-bar-menu-show a {
     font-size: 18px;
+}
+
+.navigation-bar-menu a:nth-of-type(1), .navigation-bar-menu-show a:nth-of-type(1) {
+    margin-top: 20%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -182,7 +186,7 @@ textarea {
 }
 
 .footer-input {
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -193,7 +197,7 @@ textarea {
 }
 
 .footer-input input {
-    width: 60%;
+    width: 70%;
     height: 40px;
     border-radius: 20px;
     background-color: white;
@@ -239,8 +243,10 @@ textarea {
 }
 
 .footer-socials {
+    width: 40%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 5%;
 }
 
@@ -249,34 +255,6 @@ textarea {
     height: 40px;
     border-radius: 10px;
     background-color: white;
-    margin-right: 25px;
-}
-
-@media screen and (max-width: 768px) {
-    .footer-wrapper {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .footer-input {
-        width: 80%;
-    }
-
-    .footer-privacy {
-        width: 80%;
-        margin-bottom: 20%;
-    }
-
-    .footer-links {
-        width: 80%;
-        flex-wrap: wrap;
-    }
-
-    .footer-links a {
-        width: calc(30% - 5px);
-        margin-bottom: 14px;
-    }
 }
 
 /* Homepage */
@@ -370,11 +348,11 @@ textarea {
     font-weight: 600;
     letter-spacing: 0;
     color: white;
-    padding: 1% 4%;
     border-radius: 20px;
     box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
     margin-bottom: 20%;
     cursor: pointer;
+    padding: 20px 50px;
 }
 
 .homepage-content-meaning-carousel {
@@ -394,10 +372,9 @@ textarea {
     align-items: center;
 }
 
-.homepage-content-meaning-text p:nth-of-type(1), .homepage-content-meaning-text p:nth-of-type(1) span {
+.homepage-content-meaning-text p:nth-of-type(1) {
     font-family: "Inter", "sans-serif";
     font-size: 50px;
-    line-height: 61px;
     letter-spacing: 0;
     text-align: center;
 }
@@ -406,11 +383,7 @@ textarea {
     font-weight: 600;
     width: 60%;
     margin-bottom: 10%;
-}
-
-.homepage-content-meaning-text p:nth-of-type(1) span:nth-of-type(1) {
-    color: #08e4bc;
-    font-size: 50px;
+    line-height: 61px;
 }
 
 .homepage-content-meaning-text p:nth-of-type(2) {
@@ -587,7 +560,7 @@ textarea {
     height: 340px;
     border-radius: 20px;
     box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
-    z-index: 10;
+    z-index: 3;
 }
 
 .about-us-content-team-row-member-image {
@@ -691,7 +664,7 @@ textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20%;
+    margin-bottom: 40%;
 }
 
 .contact-us-content-form-inputs {
@@ -878,7 +851,7 @@ textarea {
     width: 60%;
     text-align: center;
     margin-bottom: 5%;
-    z-index: 10;
+    z-index: 3;
 }
 
 .sustainability-content-titles p:nth-of-type(1) {
@@ -958,7 +931,7 @@ textarea {
 @media screen and (max-width: 700px) {
 
     .sustainability-content-wrapper {
-        width: 90%;
+        width: 70%;
     }
 
     .sustainability-content-titles {
@@ -975,6 +948,7 @@ textarea {
 
     .sustainability-widget-container {
         width: 100%;
+        max-height: 950px;
     }
 
     .sustanability-widget-container-content p:nth-of-type(1) {
@@ -989,69 +963,62 @@ textarea {
 
 }
 
-/* Homepage Media Queries */
+@media screen and (max-width: 550px) {
 
-@media screen and (max-width: 768px) {
-    .homepage-content-stack p {
-        width: 100%;
-        font-size: 60px;
-        text-align: center;
-        right: auto;
+    .sustainability-content-wrapper {
+        width: 80%;
     }
-
-    .homepage-content-stack img {
-        margin-top: 30%;
-    }
-
-    .homepage-content-explanation, .homepage-content-sustainability {
-        width: 90%;
-        margin-bottom: 5%;
-    }
-
-    .homepage-content-sustainability p:nth-child(1) {
-        margin-bottom: 10%;
-    }
-
-    .homepage-content-explanation p {
-        margin-top: 10%;
-    }
-
-    .homepage-content-explanation-button, .homepage-content-sustainability-button {
-        margin-top: 5%;
-        margin-bottom: 20%;
-    }
-
-    .homepage-content-explanation-images {
-        margin-bottom: 20%;
-    }
-
-    .homepage-content-sustainability-images-row:last-child {
-        margin-bottom: 30%;
-    }
-
 
 }
 
-@media screen and (max-width: 600px) {
+/* Homepage Media Queries */
 
-    .homepage-content-stack p {
-        font-size: 50px;
+@media screen and (max-width: 550px) {
+
+    .homepage-content-meaning p:nth-of-type(1) {
+        font-size: 80px;
     }
 
-    .homepage-content-stack p span {
-        display: block;
+    .homepage-content-meaning-button {
+        margin-top: 10%;
     }
 
-    .homepage-content-stack img {
-        margin-top: 50%;
+    .homepage-content-purpose-title p {
+        font-size: 60px;
     }
 
-    .homepage-content-sustainability p:nth-child(1) {
-        font-size: 40px;
+    .homepage-content-purpose-title p span:nth-of-type(1) {
+        font-size: 60px;
     }
 
-    .homepage-content-sustainability p:nth-child(1) span {
-        font-size: 40px;
+    .homepage-content-purpose-title p span:nth-of-type(2) {
+        font-size: 90px;
+    }
+
+    .homepage-content-purpose-gallery {
+        flex-direction: column;
+    }
+
+    .homepage-content-purpose-gallery-column {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .homepage-content-introduction p {
+        font-size: 35px;
+        line-height: 36px;
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+
+    .homepage-content-introduction p {
+        font-size: 30px;
+        line-height: 36px;
     }
 
 }
@@ -1237,6 +1204,37 @@ textarea {
     .contact-us-content-titles p:nth-child(2) {
         font-size: 15px;
         margin-bottom: 10%;
+    }
+
+}
+
+/* Footer Media Queries */
+
+@media screen and (max-width: 768px) {
+
+    .footer-wrapper {
+        width: 90%;
+    }
+
+    .footer-input {
+        width: 70%;
+    }
+
+    .footer-input input {
+        width: 100%;
+    }
+
+    .footer-privacy {
+        width: 80%;
+        margin-bottom: 5%;
+    }
+
+    .footer-links {
+        margin-bottom: 10%;
+    }
+
+    .footer-socials {
+        margin-bottom: 5%;
     }
 
 }

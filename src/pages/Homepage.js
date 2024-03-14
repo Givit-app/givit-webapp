@@ -46,7 +46,7 @@ export default function Homepage() {
                         <img src={homepageCarousel} alt="Meaning Carousel"/>
                     </div>
                     <div className="homepage-content-meaning-text">
-                        <p>If your first choice is secondhand, this is <span>your place!</span></p>
+                        <p>If your first choice is secondhand, this is <span style={{color: "#08e4bc", fontSize: "50px", lineHeight: "61px"}}>your place!</span></p>
                         <p>When you use Givit for purchasing and renting, you're not just buying or renting items.
                             You're revitalizing unused goods, earning extra money, discovering treasures, and saving
                             money. By being mindful of your consumption, you contribute to a greener planet. Givit
