@@ -18,7 +18,7 @@ export default function ContactUs() {
     const [requestSent, setRequestSent] = useState(false);
 
     const checkParametersValidity = async () => {
-        return (validator.isEmail(document.getElementsByName("email")[0].value) && document.getElementsByName("name")[0].value !== "" && document.getElementsByName("message")[0].value !== "");
+         return (validator.isEmail(document.getElementsByName("email")[0].value) && document.getElementsByName("name")[0].value !== "" && document.getElementsByName("message")[0].value !== "");
     }
 
     const sendRequest = async () => {
@@ -62,8 +62,12 @@ export default function ContactUs() {
                     </div>
                     <div className="contact-us-content-form">
                         <div className="contact-us-content-form-inputs">
-                            <input type="text" name={"name"} placeholder={"Name"}/>
-                            <input type="email" name={"email"} placeholder={"Email"}/>
+                            <div className="contact-us-inputs-overlay">
+                                <input type="text" name={"name"} placeholder={"Name"}/>
+                            </div>
+                            <div className="contact-us-inputs-overlay">
+                                <input type="email" name={"email"} placeholder={"Email"}/>
+                            </div>
                         </div>
                         <div className="contact-us-content-form-textarea">
                             <textarea name="message" rows="10" placeholder={"Write here what you need!"}/>

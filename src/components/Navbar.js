@@ -32,7 +32,7 @@ export default function Navbar() {
               <a href="/sustainability" onClick={closeMenuOnMobile}>Sustainability</a>
               {/*<a href="/blog" onClick={closeMenuOnMobile}>Blog</a>}*/}
               <a href="/about-us" onClick={closeMenuOnMobile}>About Us</a>
-              <a href="/business" onClick={closeMenuOnMobile}>Business</a>
+              {/*<a href="/business" onClick={closeMenuOnMobile}>Business</a>*/}
               <a href="/contact-us" onClick={closeMenuOnMobile}>Contact Us</a>
           </div>
           <div className="navigation-bar-links-sx">
@@ -46,7 +46,7 @@ export default function Navbar() {
           <div className="navigation-bar-links-dx">
               {/*<a href="/blog">Blog</a>}*/}
               <a href="/about-us">About Us</a>
-              <a href="/business">Business</a>
+              {/*<a href="/business">Business</a>*/}
               <a href="/contact-us">Contact Us</a>
           </div>
       </div>
