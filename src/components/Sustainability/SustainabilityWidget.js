@@ -39,7 +39,7 @@ export default function SustainabilityWidget(props) {
 
     return (
         <div style={containerStyle} className={"sustainability-widget-container"}>
-            <div style={containerContentStyle} className="sustanability-widget-container-content">
+            <div style={containerContentStyle} className="sustainability-widget-container-content">
                 <p style={firstPContainerStyle}>{props.title}</p>
                 <p>{props.content}</p>
                 <img style={imageContainerStyle} src={goalImage} alt="Sustainability goal"/>

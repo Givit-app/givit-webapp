@@ -1,8 +1,8 @@
 import React from 'react';
 
-import '../styles/index.css';
+import '../../styles/index.css';
 
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 export default function LogoBottom() {
     return (

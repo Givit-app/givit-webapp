@@ -40,7 +40,7 @@ export default function Sustainability() {
                                           alignment={true}
                                           index={2}
                     />
-                    <SustainabilityWidget title={"We love diversity"}
+                    <SustainabilityWidget title={"We support climate actions"}
                                           content={"Givit promotes climate action by fostering a sharing economy, which reduces resource-intensive production and greenhouse gas emissions. Additionally, it supports local communities and conservation projects through donations, thereby reducing carbon emissions and facilitating\nsustainable, localized access to products."}
                                           reverse={true}
                                           alignment={true}

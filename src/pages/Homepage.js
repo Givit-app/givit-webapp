@@ -6,7 +6,7 @@ import '../styles/index.css';
 
 import Navbar from '../components/Navbar.js';
 import Footer from "../components/Footer";
-import LogoBottom from "../components/LogoBottom";
+import LogoBottom from "../components/Home/LogoBottom";
 import PurposeElement from "../components/Home/PurposeElement";
 
 import homepageImage from '../assets/homepage_image.png';
